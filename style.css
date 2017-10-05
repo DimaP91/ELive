@@ -1,0 +1,8 @@
+table td{
+  width: 32px;
+  height: 32px;
+}
+
+table{
+  border-collapse: collapse;
+}
