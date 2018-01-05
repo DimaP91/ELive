@@ -1,0 +1,19 @@
+{
+  "name": "elive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimaP91/ELive.git"
+  },
+  "author": "Dmytro Prokopiuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DimaP91/ELive/issues"
+  },
+  "homepage": "https://github.com/DimaP91/ELive#readme"
+}
