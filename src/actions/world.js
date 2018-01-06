@@ -1,4 +1,9 @@
-export class Word {
+import Grid from 'src/actions/grid';
+import Vector from 'vector';
+import { elementFromChar, charFromElement, directions } from '_helpers';
+import actionTypes from 'action';
+
+export default class World {
   constructor (map, legend) {
     let grid = new Grid(map[0].length, map.length);
     this.grid = grid;
@@ -41,7 +46,7 @@ export class Word {
     return table;
   }
 
-  turn  () {
+  turn () {
     let acted = [];
     this.grid.forEach((critter, vector) => {
       if (critter.act && acted.indexOf(critter) === -1) {
@@ -72,4 +77,5 @@ export class Word {
       }
     }
   }
+
 }
