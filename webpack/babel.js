@@ -1,19 +1,19 @@
 module.exports = function () {
   return {
     module: {
-      rules: [
+      loaders: [
         {
           test: /\.js$/,
           use: [
             {
-              loader: "babel-loader",
+              loader: 'babel-loader',
               options: {
-                "presets": ["env"]
-              }
-            }
-          ]
-        }
-      ]
-    }
-  }
+                presets: ['env'],
+              },
+            },
+          ],
+        },
+      ],
+    },
+  };
 };

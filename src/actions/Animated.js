@@ -1,5 +1,4 @@
-
-function Animated(world){
+export default function Animated(world) {
     this.world = world;
     this.elem = document.body.appendChild(document.createElement("div"));
     this.elem.appendChild(world.tableElement());
@@ -12,3 +11,4 @@ Animated.prototype.tick = function () {
     this.elem.removeChild(this.elem.firstChild);
     this.elem.appendChild(world.tableElement());
 }
+
