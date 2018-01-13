@@ -11,23 +11,23 @@ export const directions = {
   nw: new Vector(-1, -1),
 };
 
-export function randomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
+export function randomElement (array) {
+  return array[Math.floor(Math.random() * array.length)]
 }
 
-export function elementFromChar(legend, ch) {
+export function elementFromChar (legend, ch) {
   if (ch === ' ') {
-    return null;
+    return null
   }
-  let element = new legend[ch]();
-  element.originChar = ch;
-  return element;
+  let element = new legend[ch]()
+  element.originChar = ch
+  return element
 }
 
-export function charFromElement(element) {
+export function charFromElement (element) {
   if (element === null) {
-    return ' ';
+    return ' '
   } else {
-    return element.originChar;
+    return element.originChar
   }
 }

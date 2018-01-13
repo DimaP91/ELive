@@ -1,6 +1,8 @@
-import Animated from 'actions/animated';
-import { world } from 'actions/map';
+import Animated from 'actions/animated'
+import { map } from 'actions/map'
 
-let animatedWord = new Animated(world);
+let animatedWord = (map) => {
+  return new Animated(map)
+}
 
-animatedWord();
+animatedWord(map)

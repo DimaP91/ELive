@@ -1,1 +1,1 @@
-function Wall() {}
+export default class Wall {}
