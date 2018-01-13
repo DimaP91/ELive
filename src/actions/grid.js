@@ -1,4 +1,4 @@
-import Vector from 'vector';
+import Vector from './vector';
 
 export default class Grid {
   constructor (width, height) {

@@ -1,4 +1,4 @@
-import World from 'world'
+import World from './world'
 import Wall from '../object/Wall'
 import Tiger from '../object/Tiger'
 import PlantEater from '../object/PlantEater'

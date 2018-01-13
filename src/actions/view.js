@@ -1,4 +1,4 @@
-import { randomElement, charFromElement, directions } from '_helpers';
+import { randomElement, charFromElement, directions } from './_helpers';
 
 export default class View {
   constructor (world, vector) {

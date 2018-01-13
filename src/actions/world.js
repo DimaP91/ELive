@@ -1,8 +1,8 @@
-import Grid from 'src/actions/grid'
-import View from 'view'
-import Vector from 'vector'
-import { elementFromChar, charFromElement, directions } from '_helpers'
-import actionTypes from 'action'
+import Grid from './grid'
+import View from './view'
+import Vector from './vector'
+import { elementFromChar, charFromElement, directions } from './_helpers'
+import actionTypes from './action'
 
 export default class World {
   constructor (map, legend) {
@@ -48,6 +48,7 @@ export default class World {
   }
 
   turn () {
+    debugger
     let acted = []
     this.grid.forEach((critter, vector) => {
       if (critter.act && acted.indexOf(critter) === -1) {

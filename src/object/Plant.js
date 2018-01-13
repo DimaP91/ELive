@@ -1,7 +1,8 @@
 export default class Plant {
-    constructor () {
+  constructor () {
     this.energy = 3 + Math.random() * 4
-}
+  }
+
   act (view) {
     if (this.energy > 15) {
       let space = view.find(' ')
@@ -12,4 +13,5 @@ export default class Plant {
     if (this.energy < 20) {
       return {type: 'grow'}
     }
+  }
 }

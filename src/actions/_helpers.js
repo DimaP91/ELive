@@ -1,4 +1,4 @@
-import Vector from 'vector';
+import Vector from './vector'
 
 export const directions = {
   n:  new Vector(0, -1),
