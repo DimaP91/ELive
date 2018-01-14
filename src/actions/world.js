@@ -48,7 +48,6 @@ export default class World {
   }
 
   turn () {
-    debugger
     let acted = []
     this.grid.forEach((critter, vector) => {
       if (critter.act && acted.indexOf(critter) === -1) {
