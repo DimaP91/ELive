@@ -1,5 +1,6 @@
-import msg from './msg';
+import View from './tools/View';
+import map from './map';
 
-const print = (text) => document.write(text);
+const view = new View('body', map);
 
-print(msg);
+view.display();

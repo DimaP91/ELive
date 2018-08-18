@@ -94,19 +94,43 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _msg = __webpack_require__(/*! ./msg */ \"./source/msg.js\");\n\nvar _msg2 = _interopRequireDefault(_msg);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar print = function print(text) {\n  return document.write(text);\n};\n\nprint(_msg2.default);\n\n//# sourceURL=webpack:///./source/App.js?");
+eval("\n\nvar _View = __webpack_require__(/*! ./tools/View */ \"./source/tools/View.js\");\n\nvar _View2 = _interopRequireDefault(_View);\n\nvar _map = __webpack_require__(/*! ./map */ \"./source/map.js\");\n\nvar _map2 = _interopRequireDefault(_map);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar view = new _View2.default('body', _map2.default);\n\nview.display();\n\n//# sourceURL=webpack:///./source/App.js?");
 
 /***/ }),
 
-/***/ "./source/msg.js":
+/***/ "./source/helpers/dom.js":
+/*!*******************************!*\
+  !*** ./source/helpers/dom.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = $;\nfunction $(tag) {\n  return document.querySelector(tag);\n}\n\n$.createElement = function (tag, context) {\n  var elem = document.createElement(tag);\n  if (context) {\n    elem.innerText = context;\n  }\n  return elem;\n};\n\n//# sourceURL=webpack:///./source/helpers/dom.js?");
+
+/***/ }),
+
+/***/ "./source/map.js":
 /*!***********************!*\
-  !*** ./source/msg.js ***!
+  !*** ./source/map.js ***!
   \***********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar msg = 'Olsaasdasd asdasd asds';\n\nexports.default = msg;\n\n//# sourceURL=webpack:///./source/msg.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = {\n  design: ['####################################################', '#                 ####         ****              ###', '#   *  @  ##                 ########       &&    ##', '#   *    ##        & &                 ****       *#', '#       ##*                        ##########     *#', '#      ##***  *         ****                     **#', '#* **  #  *  ***      #########                  **#', '#* **  #      *               #   *              **#', '#     ##              #   &   #  ***          ######', '#*            @       #       #   *        &  #    #', '#*                    #  ######                 ** #', '###          ****          ***                  ** #', '#       &                        @         &       #', '#   *     ##  ##  ##  ##               ###      *  #', '#   **         #              *       #####  &     #', '##  **  &   &  #  #    ***  ***        ###      ** #', '###               #   *****                    ****#', '####################################################'],\n\n  objects: {\n    '#': 'wall',\n    '*': 'plant',\n    '&': 'some',\n    '@': 'tiger'\n  }\n};\n\n//# sourceURL=webpack:///./source/map.js?");
+
+/***/ }),
+
+/***/ "./source/tools/View.js":
+/*!******************************!*\
+  !*** ./source/tools/View.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _dom = __webpack_require__(/*! ../helpers/dom */ \"./source/helpers/dom.js\");\n\nvar _dom2 = _interopRequireDefault(_dom);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar View = function () {\n  function View(elem, _ref) {\n    var design = _ref.design,\n        objects = _ref.objects;\n\n    _classCallCheck(this, View);\n\n    this.design = design;\n    this.objects = objects;\n    this.root = (0, _dom2.default)(elem);\n    console.info(objects);\n  }\n\n  _createClass(View, [{\n    key: 'display',\n    value: function display() {\n      this.root.appendChild(this.createGrid());\n    }\n  }, {\n    key: 'createGrid',\n    value: function createGrid() {\n      var TABLE = _dom2.default.createElement('table');\n\n      this.design.map(function (row) {\n        var TR = _dom2.default.createElement('tr');\n        row.split('').map(function (column) {\n          return TR.appendChild(_dom2.default.createElement('td', column));\n        });\n        return TABLE.appendChild(TR);\n      });\n\n      return TABLE;\n    }\n  }]);\n\n  return View;\n}();\n\nexports.default = View;\n\n//# sourceURL=webpack:///./source/tools/View.js?");
 
 /***/ })
 
